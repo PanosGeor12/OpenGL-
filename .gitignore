@@ -30,5 +30,5 @@ bin/
 
 ### By PanosG ###
 src/lib/
-.idea
+.idea/
 !**.iml

@@ -38,6 +38,7 @@ public class Polygon10 implements GLEventListener {
 
     @Override
     public void display(GLAutoDrawable glAutoDrawable) {
+        GL2 gl = GLContext.getCurrentGL().getGL2();
 
     }
 

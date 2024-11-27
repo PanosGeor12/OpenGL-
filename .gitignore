@@ -31,4 +31,4 @@ bin/
 ### By PanosG ###
 src/lib/
 .idea/
-!**.iml
+allExercises.iml

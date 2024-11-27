@@ -6,7 +6,7 @@ import com.jogamp.newt.opengl.GLWindow;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.util.FPSAnimator;
 
-public class Polygon10 implements GLEventListener {
+public class Polygon6 implements GLEventListener {
 
     public static void init() {
         GLProfile.initSingleton();
@@ -18,7 +18,7 @@ public class Polygon10 implements GLEventListener {
         window.setSize(500,500);
         window.setResizable(false);
         window.setVisible(true);
-        window.addGLEventListener(new Polygon10());
+        window.addGLEventListener(new Polygon6());
 
         window.addWindowListener(new WindowAdapter() {
             @Override
@@ -44,7 +44,7 @@ public class Polygon10 implements GLEventListener {
 
         gl.glColor3f(0.0f, 0.0f, 1.0f);
         gl.glBegin(GL2.GL_POLYGON);
-        int numVertices = 10;
+        int numVertices = 6;
         float radius = 0.5f;
 
         for(int i=0; i<numVertices; i++) {
@@ -53,7 +53,6 @@ public class Polygon10 implements GLEventListener {
             float y = (float) (radius * Math.sin(angle));
             gl.glVertex3f(x, y, 0.0f);
         }
-
         gl.glEnd();
     }
 

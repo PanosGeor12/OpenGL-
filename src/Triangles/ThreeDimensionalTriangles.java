@@ -1,10 +1,12 @@
+package Triangles;
+
 import com.jogamp.newt.event.WindowAdapter;
 import com.jogamp.newt.event.WindowEvent;
 import com.jogamp.newt.opengl.GLWindow;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.util.FPSAnimator;
 
-public class BoilerPlate implements GLEventListener {
+public class ThreeDimensionalTriangles implements GLEventListener {
     public static void init() {
         GLProfile.initSingleton();
         GLProfile profile = GLProfile.get(GLProfile.GL2);
@@ -16,7 +18,7 @@ public class BoilerPlate implements GLEventListener {
 //        window.setTitle("");
         window.setResizable(false);
         window.setVisible(true);
-        window.addGLEventListener(new BoilerPlate());
+        window.addGLEventListener(new ThreeDimensionalTriangles());
 
         window.addWindowListener(new WindowAdapter() {
             @Override
@@ -41,6 +43,26 @@ public class BoilerPlate implements GLEventListener {
         gl.glLoadIdentity();
 
         // Start Drawing Here
+        gl.glColor3f(1.0f, 0.0f,0.0f);
+        gl.glBegin(GL2.GL_TRIANGLES);
+            gl.glVertex3f(0.8f, -0.5f, -1.0f); // RIGHT
+            gl.glVertex3f(0.0f, 0.5f, 1.0f); // TOP
+            gl.glVertex3f(-0.8f, -0.5f, -1.0f); // LEFT
+        gl.glEnd();
+
+        gl.glColor3f(0.0f, 0.0f,1.0f);
+        gl.glBegin(GL2.GL_TRIANGLES);
+            gl.glVertex3f(-0.8f, 0.1f, -1.0f); // RIGHT
+            gl.glVertex3f(0.0f, -0.8f, 1.0f); // TOP
+            gl.glVertex3f(0.8f, 0.1f, -1.0f); // LEFT
+        gl.glEnd();
+
+        gl.glColor3f(1.0f, 1.0f,0.0f);
+        gl.glBegin(GL2.GL_TRIANGLES);
+            gl.glVertex3f(0.4f, 0.0f, -1.0f); // RIGHT
+            gl.glVertex3f(0.0f, 0.5f, 1.0f); // TOP
+            gl.glVertex3f(-0.4f, -0.0f, -1.0f); // LEFT
+        gl.glEnd();
     }
 
     @Override
@@ -56,4 +78,5 @@ public class BoilerPlate implements GLEventListener {
     @Override
     public void init(GLAutoDrawable drawable){}
 }
+
 
